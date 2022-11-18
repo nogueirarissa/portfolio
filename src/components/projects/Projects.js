@@ -1,15 +1,65 @@
 import { Col, Container, Tab, Row, Nav } from "react-bootstrap";
 import { ProjectCard } from "../cards/ProjectCard";
 import projImg1 from "../../assets/img/projImg1.png";
+import projImg from "../../assets/img/projImg-soon.png";
+import navIcon1 from '../../assets/img/nav-icon1.png';
 import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
 
-    const projects = [
+    const projectFull = [
         {
             title: "Autonominas",
-            description: "Design & Development",
+            description: "Its purpose is to empower Brazilian girls and women by sharing knowledge and experiences and creating a support network based on respect and sorority.",
             imgUrl: projImg1,
+            github: <div className="social-icon"><a href="https://github.com/autonominas"><img src={navIcon1} alt="" /></a></div>,
+        },
+        {
+            title: "Wait for it!",
+            description: "The Queen B is working on it",
+            imgUrl: projImg,
+        },
+        {
+            title: "Wait for it!",
+            description: "The Queen B is working on it",
+            imgUrl: projImg,
+        },
+
+    ];
+
+    const projectFront = [
+        {
+            title: "Wait for it!",
+            description: "The Queen B is working on it",
+            imgUrl: projImg,
+        },
+        {
+            title: "Wait for it!",
+            description: "The Queen B is working on it",
+            imgUrl: projImg,
+        },
+        {
+            title: "Wait for it!",
+            description: "The Queen B is working on it",
+            imgUrl: projImg,
+        },
+
+    ];
+    const projectBack = [
+        {
+            title: "Wait for it!",
+            description: "The Queen B is working on it",
+            imgUrl: projImg,
+        },
+        {
+            title: "Wait for it!",
+            description: "The Queen B is working on it",
+            imgUrl: projImg,
+        },
+        {
+            title: "Wait for it!",
+            description: "The Queen B is working on it",
+            imgUrl: projImg,
         },
 
     ];
@@ -23,24 +73,24 @@ export const Projects = () => {
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                     <h2>Projects</h2>
-                                    <p> Texto simples sobre os projetos</p>
+                                    <p> Here you will find all the projects developed by me. Hope you like it! </p>
                                     <Tab.Container id="projects-tabs" defaultActiveKey="first">
                                         <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                             <Nav.Item>
-                                                <Nav.Link eventKey="first">Tab One</Nav.Link>
+                                                <Nav.Link eventKey="first">Fullstack</Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item>
-                                                <Nav.Link eventKey="second">Tab Two</Nav.Link>
+                                                <Nav.Link eventKey="second">Frontend</Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item>
-                                                <Nav.Link eventKey="third">Tab Three</Nav.Link>
+                                                <Nav.Link eventKey="third">Backend</Nav.Link>
                                             </Nav.Item>
                                         </Nav>
                                         <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                                             <Tab.Pane eventKey="first">
                                                 <Row>
                                                     {
-                                                        projects.map((project, index) => {
+                                                        projectFull.map((project, index) => {
                                                             return (
                                                                 <ProjectCard
                                                                     key={index}
@@ -52,10 +102,32 @@ export const Projects = () => {
                                                 </Row>
                                             </Tab.Pane>
                                             <Tab.Pane eventKey="second">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                                                <Row>
+                                                    {
+                                                        projectFront.map((project, index) => {
+                                                            return (
+                                                                <ProjectCard
+                                                                    key={index}
+                                                                    {...project}
+                                                                />
+                                                            )
+                                                        })
+                                                    }
+                                                </Row>
                                             </Tab.Pane>
                                             <Tab.Pane eventKey="third">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                                                <Row>
+                                                    {
+                                                        projectBack.map((project, index) => {
+                                                            return (
+                                                                <ProjectCard
+                                                                    key={index}
+                                                                    {...project}
+                                                                />
+                                                            )
+                                                        })
+                                                    }
+                                                </Row>
                                             </Tab.Pane>
                                         </Tab.Content>
                                     </Tab.Container>
@@ -67,3 +139,4 @@ export const Projects = () => {
         </section>
     )
 }
+

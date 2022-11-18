@@ -38,7 +38,7 @@ export const Skills = () => {
                         <h2>
                             Skills
                         </h2>
-                        <p> Escreva aqui quais são suas skills </p>
+                        <p> "She grinds day and night, she grinds from Monday to Friday, works from Friday to Sunday, she gon' slang..."  </p>
                         <Carousel responsive={responsive} infinite={true} className="skill-slider">
                             <div className="item">
                                 <img src={skill1} alt="Image" />
@@ -54,7 +54,7 @@ export const Skills = () => {
                             </div>
                             <div className="item">
                                 <img src={skill4} alt="Image" />
-                                <h5>Something</h5>
+                                <h5>Communication</h5>
                             </div>
                         </Carousel>
                     </div>

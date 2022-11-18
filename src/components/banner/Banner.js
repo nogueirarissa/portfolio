@@ -12,7 +12,7 @@ export const Banner = () => {
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const [index, setIndex] = useState(1);
-    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+    const toRotate = ["a Web Developer", " a Tech Lover", "a Result Driven"];
     const period = 2000;
 
     useEffect(() => {
@@ -52,19 +52,23 @@ export const Banner = () => {
         <section className="banner" id="home">
             <Container>
                 <Row className="align-items-center">
-                    <Col xs={12} md={6} xl={7}>
-                        < TrackVisibility>
-                        {({ isVisible }) =>
-                        <div className={isVisible ? "animated__animeted animate__fadeIn" : ""}>
-                        <span className="tagline">Welcome to my Portfolio</span>
-                        <h1>{'Hi Im webdecod '}<span className="wrap">{text}</span></h1>
-                        <p>Escrever sobre mim</p>
-                        <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-                        </div>}
+                    <Col xs={12} md={6} xl={5}>
+                        <TrackVisibility>
+                            {({ isVisible }) =>
+                                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                                    <img src={headerImg} alt="Header Img" />
+                                </div>}
                         </TrackVisibility>
                     </Col>
-                    <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="Header Img" />
+                    <Col xs={12} md={6} xl={7}>
+                        < TrackVisibility>
+                            {({ isVisible }) =>
+                                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                                    <span className="tagline">Bee welcome to my Hive!</span>
+                                    <h1>{`Hello! I'm Larissa:`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Web Developer", "Tech Lover", "Result Driven"]'><span className="wrap">{text}</span></span></h1>
+                                    <p>In this hive, you can find the projects I'm working on. In the future, a blog will be embedded that will serve both to monitor my progress and to help other programmer bees.</p>
+                                </div>}
+                        </TrackVisibility>
                     </Col>
                 </Row>
             </Container>
@@ -72,3 +76,5 @@ export const Banner = () => {
         </section>
     )
 }
+
+//<button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>

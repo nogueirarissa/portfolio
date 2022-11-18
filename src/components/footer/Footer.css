@@ -1,5 +1,5 @@
 .footer {
-    padding: 0 0 50px 0;
+    padding: 0 0 70px 0;
     background-image: url('../../assets/img/footer-bg.png');
     background-position: center center;
     background-size: cover;
@@ -15,10 +15,13 @@
     font-size: 14px;
     color: #B8B8B8;
     letter-spacing: 0.5px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
-.newsletter-bx {
+.pad-footer {
+padding-top: 50px;
+}
+/* .newsletter-bx {
     background: #FFFFFF;
     border-radius: 55px;
     color: #121212;
@@ -83,4 +86,4 @@
     font-weight: 500;
     letter-spacing: 0.5px;
     border-radius: 18px;
-}
+} */
